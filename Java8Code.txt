@@ -1,0 +1,22 @@
+##To print the  number of occurence of the a string/number in a list.
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        List<String> words = Arrays
+                .asList("cat", "rat", "bat", "cow", "cat", "bat");
+        
+        // For Long values
+        Map<String, Long> result = words.stream()
+                .collect(Collectors.groupingBy(Function.identity(),
+                        Collectors.counting()));
+        System.out.println(result);
+    }
+
+}
